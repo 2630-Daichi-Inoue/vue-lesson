@@ -4,5 +4,6 @@ const vueURL = 'ref(https://vuejs.org)'
 const vueID = ref('vue-link')
 </script>
 <template>
-  <a :id="vueID" :href="vueURL">Vue.js</a>
+  <a :id="undefined" :href="false">Vue.js</a>
+  <button :disabled="null">Button</button>
 </template>
