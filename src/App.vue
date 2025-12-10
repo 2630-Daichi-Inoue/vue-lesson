@@ -1,9 +1,7 @@
 <script setup>
   import { ref } from 'vue';
-  const count = ref(2);
+  const message = ref('<h1>Hello world!</h1>')
 </script>
 <template>
-  <div>{{ 3 + 4 }}</div>
-  <div>{{ count > 3 ? 'greater than 3' : 'smaller than or equal to 3' }}</div>
-  <div v-text="count"></div>
+  <div v-html="message"></div>
 </template>
