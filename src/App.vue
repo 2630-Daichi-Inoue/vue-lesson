@@ -1,13 +1,11 @@
 <script setup>
-import { ref } from 'vue'
-const count = ref(0)
-function countUp(event) {
-  count.value = event.clientX * 5
-  }
+  import { ref } from 'vue'
+  const count = ref(0);
 </script>
 <template>
   <p>{{ count }}</p>
-  <!-- <button v-on:click="count++">Button</button> -->
-  <button @click="count = $event.clientX">Button</button>
-  <button @click="countUp($event, 5)">Button</button>
+  <div @click="count++">
+    <button @click.stop="count = 30">Button</button>
+    <a href="https://vuejs.org" @click.prevent.stop>Vue.js</a>
+  </div>
 </template>
