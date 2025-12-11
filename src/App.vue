@@ -4,8 +4,5 @@
 </script>
 <template>
   <p>{{ count }}</p>
-  <div @click="count++">
-    <button @click.stop="count = 30">Button</button>
-    <a href="https://vuejs.org" @click.prevent.stop>Vue.js</a>
-  </div>
+  <input type="text" @keyup.space.delete="count++">
 </template>
