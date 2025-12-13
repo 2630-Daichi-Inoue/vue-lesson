@@ -1,6 +1,11 @@
 <script setup>
   import { ref } from 'vue'
+  const ok = ref(true)
+  const maybeOk = ref(true)
 </script>
 <template>
-  <div :style="{ color: 'red', backgroundColor: 'blue'}">Hello, Vue.js!</div>
+  <p v-if="ok">OK!</p>
+  <p v-else-if="maybeOk">Maybe OK ...</p>
+  <p v-else>No!</p>
+  <button @click="ok = !ok">Toggle</button>
 </template>
