@@ -10,7 +10,10 @@
 </script>
 <template>
   <button @click="fruits.shift()">Button</button>
-  <li v-for="({ id, name }, index) in fruits" :key="id">
-    <input type="text">{{ name }} {{ index }}
-  </li>
+  <template v-for="({ id, name }, index) in fruits" :key="id">
+    <template v-if="id === 1">
+      <p>id: {{ id }}</p>
+      <input type="text">{{ name }} {{ index }}
+    </template>
+  </template>
 </template>
