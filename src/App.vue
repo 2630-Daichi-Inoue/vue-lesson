@@ -5,10 +5,12 @@
       {id: 2, name: 'Apple'},
       {id: 3, name: 'Banana'},
       {id: 4, name: 'Cherry'},
-    ]
+  ]
   )
 </script>
 <template>
   <button @click="fruits.shift()">Button</button>
-  <li v-for="(fruit, index) in fruits" :key="fruit.id"><input type="text">{{ fruit.name }} {{ index }}</li>
+  <li v-for="({ id, name }, index) in fruits" :key="id">
+    <input type="text">{{ name }} {{ index }}
+  </li>
 </template>
