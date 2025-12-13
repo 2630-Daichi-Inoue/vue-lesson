@@ -10,5 +10,5 @@
 </script>
 <template>
   <button @click="fruits.shift()">Button</button>
-  <li v-for="fruit in fruits" :key="fruit.id"><input type="text">{{ fruit.name }}</li>
+  <li v-for="(fruit, index) in fruits" :key="fruit.id"><input type="text">{{ fruit.name }} {{ index }}</li>
 </template>
