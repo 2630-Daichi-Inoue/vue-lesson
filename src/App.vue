@@ -1,6 +1,7 @@
 <script setup>
 import CountUp from './components/CountUp.vue'
 import BaseButton from './components/BaseButton.vue';
+
 </script>
 <template>
   <h1 class="red">Hello, Vue.js!</h1>
@@ -10,9 +11,9 @@ import BaseButton from './components/BaseButton.vue';
 </template>
 
 <style>
-  body {
+  /* body {
     background-color: beige;
-  }
+  } */
 </style>
 
 <style scoped>
