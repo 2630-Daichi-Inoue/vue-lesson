@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <h2>Count up</h2>
+  <h2 v-bind="$attrs">Count up</h2>
   <BaseIcon />
   <p>count: {{ count }}</p>
   <button @click="count++">Count Up</button>
