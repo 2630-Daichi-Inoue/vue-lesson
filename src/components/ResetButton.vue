@@ -1,7 +1,7 @@
 <script setup>
-  const emit = defineEmits(['reset'])
+  const emit = defineEmits(['resetCount'])
   function emitReset() {
-    emit('reset', 0)
+    emit('resetCount', 0)
   }
 </script>
 

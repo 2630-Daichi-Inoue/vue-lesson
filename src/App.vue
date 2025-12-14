@@ -11,5 +11,5 @@
 <template>
   <p>Count: {{ count }}</p>
   <button @click="count++">Count Up</button>
-  <ResetButton @reset="onReset"/>
+  <ResetButton @reset-count="onReset"/>
 </template>
