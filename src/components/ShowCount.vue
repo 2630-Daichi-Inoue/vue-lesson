@@ -1,8 +1,10 @@
 <script setup>
   defineProps({
     foo: {
-      type: Number,
-      default: 100
+      type: [Number, String],
+      default: function() {
+        return 0;
+      }
     }
   })
 </script>
