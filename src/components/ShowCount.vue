@@ -1,16 +1,10 @@
 <script setup>
-  import { watch, watchEffect } from 'vue';
-  // const props = defineProps(['foo'])
-  const { foo } = defineProps(['foo'])
-  watchEffect(() => {
-    console.log('foo is now:', foo);
-  });
-  watch(
-    () => foo,
-    () => {
-      console.log('foo changed to:', foo);
+  defineProps({
+    foo: {
+      type: Number,
+      default: 100
     }
-  )
+  })
 </script>
 
 <template>
