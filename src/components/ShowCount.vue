@@ -1,14 +1,15 @@
 <script setup>
   defineProps({
-    foo: {
-      type: [Number, String],
-      default: function() {
-        return 0;
+    totalScore: {
+      type: Number,
+      required: true,
+      validator(value) {
+        return value === 0
       }
     }
   })
 </script>
 
 <template>
-  <p>Count: {{ foo }}</p>
+  <p>Count: {{ totalScore }}</p>
 </template>

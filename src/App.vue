@@ -4,6 +4,6 @@
   const count = ref(0)
 </script>
 <template>
-  <ShowCount :foo="count" />
+  <ShowCount :total-score="count" />
   <button @click="count++">Count Up</button>
 </template>
