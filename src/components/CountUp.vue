@@ -7,8 +7,11 @@
     onBeforeMount,
     onBeforeUpdate,
     onBeforeUnmount,
-    nextTick
-} from 'vue'
+    nextTick,
+  } from 'vue'
+
+
+
   const count = ref(0)
   console.log('CountUp setup')
   onBeforeMount(()=> {
