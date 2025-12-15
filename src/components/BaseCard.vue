@@ -1,6 +1,8 @@
 <template>
   <div>
-    <slot></slot>
+    <slot>
+      <p>Hello, Vue.js!</p>
+    </slot>
   </div>
 </template>
 

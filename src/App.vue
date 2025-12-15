@@ -7,4 +7,5 @@
     <h2>Hello</h2>
     <p>How are you?</p>
   </BaseCard>
+  <BaseCard />
 </template>
