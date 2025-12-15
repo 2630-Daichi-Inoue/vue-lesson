@@ -1,10 +1,18 @@
+<script setup>
+  import { ref } from 'vue';
+  const pageCount = ref(1);
+</script>
+
 <template>
   <div>
+    <button @click="pageCount = 1">1</button>
+    <button @click="pageCount = 2">2</button>
+    <button @click="pageCount = 3">3</button>
     <header>
-      <slot name="header" />
+      <slot name="header" :page-count="pageCount" />
     </header>
     <main>
-      <slot />
+      <slot :page-count="pageCount" />
     </main>
     <footer>
       <slot name="footer" />
