@@ -11,5 +11,8 @@ console.log(currentComp)
   <button @click="currentComp = CompA">A</button>
   <button @click="currentComp = CompB">B</button>
   <button @click="currentComp = CompC">C</button>
-  <component :is="currentComp" />
+  <KeepAlive>
+    <component :is="currentComp" />
+  </KeepAlive>
+  <CompB v-show="currentComp === CompB" />
 </template>
