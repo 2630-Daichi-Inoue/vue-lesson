@@ -2,7 +2,15 @@
 import { shallowRef, defineAsyncComponent } from 'vue'
 import CompA from './components/CompA.vue'
 // import CompB from './components/CompB.vue'
-const CompB = defineAsyncComponent(() => import('./components/CompB.vue'))
+import BaseLoader from './components/BaseLoader.vue'
+import ErrorMessage from './components/ErrorMessage.vue'
+const CompB = defineAsyncComponent({
+  loader: () => import('./components/CompB.vue'),
+  loadingComponent: BaseLoader,
+  errorComponent: ErrorMessage,
+  delay: 200,
+  timeout: 3000,
+})
 import CompC from './components/CompC.vue'
 const currentComp = shallowRef(CompA)
 
