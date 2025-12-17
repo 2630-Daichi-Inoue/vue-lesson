@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from 'vue';
-import { refHistory } from './refHistory.js';
+import { refLimitedHistory } from './composables/refLimitedHistory.js';
 
 const count = ref(0)
 
-const { history, undo } = refHistory(count)
+const { history, undo } = refLimitedHistory(count)
 const userInput = ref('')
-const { history: history2, undo: undo2 } = refHistory(userInput)
+const { history: history2, undo: undo2 } = refLimitedHistory(userInput, 5)
 </script>
 <template>
   <p>count: {{ count }}</p>
