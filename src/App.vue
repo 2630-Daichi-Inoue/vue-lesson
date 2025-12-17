@@ -1,12 +1,21 @@
 <script setup>
-import { ref } from 'vue'
-import CustomInput from './components/CustomInput.vue'
-const userInput = ref('Hello!')
-const titleInput = ref('Title')
+import { ref } from 'vue';
+import { refHistory } from './refHistory.js';
+
+const count = ref(0)
+
+const { history, undo } = refHistory(count)
+const userInput = ref('')
+const { history: history2, undo: undo2 } = refHistory(userInput)
 </script>
 <template>
-  <h1>v-model</h1>
-  <CustomInput v-model.uppercase="userInput" v-model:title-name="titleInput" />
+  <p>count: {{ count }}</p>
+  <button @click="count++">Count Up</button>
+  <p>history: {{ history }}</p>
+  <button @click="undo">Undo</button>
+
   <p>userInput: {{ userInput }}</p>
-  <p>titleInput: {{ titleInput }}</p>
+  <input v-model="userInput" type="text" />
+  <p>history2: {{ history2 }}</p>
+  <button @click="undo2">Undo2</button>
 </template>
