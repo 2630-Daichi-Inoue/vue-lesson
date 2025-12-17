@@ -1,10 +1,10 @@
-import { watchEffect } from 'vue';
-import { refHistory } from './refHistory.js';
+import { watchEffect, toValue } from 'vue';
+import { useRefHistory } from './refHistory.js';
 
-export function refLimitedHistory(souce, capacity) {
-  const { history, undo} = refHistory(souce)
+export function useRefLimitedHistory(souce, capacity) {
+  const { history, undo} = useRefHistory(souce)
   watchEffect(() => {
-    if (history.value.length > capacity) {
+    if (history.value.length > toValue(capacity)) {
       history.value.shift()
     }
   })

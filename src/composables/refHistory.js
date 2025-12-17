@@ -1,6 +1,6 @@
 import { ref, watchEffect } from 'vue';
 
-export function refHistory(source) {
+export function useRefHistory(source) {
   const history = ref([])
   watchEffect(() => {
     history.value.push(source.value)
@@ -11,5 +11,5 @@ export function refHistory(source) {
     source.value = history.value.pop()
   }
 
-  return { history, undo }
+  return { history,undo }
 }
