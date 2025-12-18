@@ -1,21 +1,34 @@
 <script setup>
-import { ref } from 'vue';
-import { useRefLimitedHistory } from './composables/refLimitedHistory.js';
-
-const count = ref(0)
-
-const { history, undo } = useRefLimitedHistory(count, ref(3))
-const userInput = ref('')
-const { history: history2, undo: undo2 } = useRefLimitedHistory(userInput, 5)
+  import { ref } from "vue";
+  const isShow = ref(true);
 </script>
 <template>
-  <p>count: {{ count }}</p>
-  <button @click="count++">Count Up</button>
-  <p>history: {{ history }}</p>
-  <button @click="undo">Undo</button>
-
-  <p>userInput: {{ userInput }}</p>
-  <input v-model="userInput" type="text" />
-  <p>history2: {{ history2 }}</p>
-  <button @click="undo2">Undo2</button>
+  <h1>Animation</h1>
+  <div :class="{ 'opacity-80': isShow, 'opacity-20': !isShow, slide: !isShow }">Hello</div>
+  <button @click="isShow = !isShow">Show</button>
 </template>
+<style scoped>
+  div {
+    transition: opacity 1s;
+  }
+  .slide {
+    animation: slide 1s;
+  }
+  .opacity-80 {
+    opacity: 0.8;
+  }
+  .opacity-20 {
+    opacity: 0.2;
+  }
+  @keyframes slide {
+    0% {
+      transform: translate();
+    }
+    50% {
+      transform: translate(100px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+</style>
