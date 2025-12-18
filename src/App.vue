@@ -6,27 +6,27 @@
 <template>
   <h1>Animation</h1>
   <button @click="isShow = !isShow">Switch</button>
-  <Transition>
+  <Transition name="fade">
     <div v-if="isShow">Hello</div>
   </Transition>
 </template>
 <style scoped>
-  .v-enter-from{
+  .fade-enter-from{
     opacity: 0;
   }
-  .v-enter-active {
+  .fade-enter-active {
     transition: opacity 1s;
   }
-  .v-enter-to {
+  .fade-enter-to {
     opacity: 1;
   }
-  .v-leave-from{
+  .fade-leave-from{
     opacity: 1;
   }
-  .v-leave-active {
+  .fade-leave-active {
     transition: opacity 1s;
   }
-  .v-leave-to {
+  .fade-leave-to {
     opacity: 0;
   }
 </style>
