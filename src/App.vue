@@ -6,13 +6,10 @@
 <template>
   <h1>Animation</h1>
   <button @click="isShow = !isShow">Switch</button>
-  <Transition
-    enter-active-class="animate__animated animate__bounce"
-    leave-active-class="animate__animated animate__shakeX"
-  >
-    <div v-if="isShow">Hello, fade!</div>
+  <Transition name="fade" mode="out-in">
+    <div v-if="isShow">On</div>
+    <div v-else>Off</div>
   </Transition>
-  <h1 class="animate__animated animate__bounce">An animated element</h1>
 </template>
 <style scoped>
   .fade-enter-from{
