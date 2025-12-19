@@ -7,14 +7,15 @@ function beforeEnter(el) {
   el.style.transform = 'translateX(30px)'
 }
 
+let enterIntervalId
 function enter(el, done) {
   console.log('Enter', el)
   let translateXValue = 30
-  const intervalId = setInterval(() => {
+  enterIntervalId = setInterval(() => {
     translateXValue--
     el.style.transform = `translateX(${translateXValue}px)`
     if (translateXValue === 0) {
-      clearInterval(intervalId)
+      clearInterval(enterIntervalId)
       done()
     }
   }, 20)
@@ -24,22 +25,34 @@ function afterEnter(el) {
   console.log('afterEnter', el)
 }
 
+function enterCancelled(el) {
+  console.log('enterCancelled', el)
+  clearInterval(enterIntervalId)
+}
+
 function beforeLeave(el) {
   console.log('beforeLeave', el)
 }
 
+let leaveIntervalId
 function leave(el, done) {
   console.log('Leave', el)
   let translateXValue = 0
-  const intervalId = setInterval(() => {
+  leaveIntervalId= setInterval(() => {
     translateXValue++
     el.style.transform = `translateX(${translateXValue}px)`
     if (translateXValue === 30) {
-      clearInterval(intervalId)
+      clearInterval(leaveIntervalId)
       done()
     }
   }, 20)
 }
+
+function leaveCancelled(el) {
+  console.log('leaveCancelled', el)
+  clearInterval(leaveIntervalId)
+}
+
 
 function afterLeave(el) {
   console.log('afterLeave', el)
@@ -53,11 +66,13 @@ function afterLeave(el) {
     @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter"
+    @enter-cancelled="enterCancelled"
     @before-leave="beforeLeave"
     @leave="leave"
     @after-leave="afterLeave"
+    @leave-cancelled="leaveCancelled"
   >
-    <div v-if="isShow">On</div>
+    <div v-show="isShow">Hello!</div>
   </Transition>
 </template>
 <style scoped>
