@@ -6,12 +6,13 @@
 <template>
   <h1>Animation</h1>
   <button @click="isShow = !isShow">Switch</button>
-  <Transition name="fade" appear>
+  <Transition
+    enter-active-class="animate__animated animate__bounce"
+    leave-active-class="animate__animated animate__shakeX"
+  >
     <div v-if="isShow">Hello, fade!</div>
   </Transition>
-  <Transition name="slide" appear>
-    <div v-if="isShow">Hello, slide!</div>
-  </Transition>
+  <h1 class="animate__animated animate__bounce">An animated element</h1>
 </template>
 <style scoped>
   .fade-enter-from{
@@ -31,19 +32,5 @@
   }
   .fade-leave-to {
     opacity: 0;
-  }
-  .slide-enter-active {
-    animation: slide 1s;
-  }
-  .slide-leave-active {
-    animation: slide 1s reverse;
-  }
-  @keyframes slide {
-    0% {
-      transform: translateX(20px);
-    }
-    100% {
-      transform: translateX(0);
-    }
   }
 </style>
