@@ -6,10 +6,10 @@
 <template>
   <h1>Animation</h1>
   <button @click="isShow = !isShow">Switch</button>
-  <Transition name="fade">
+  <Transition name="fade" appear>
     <div v-if="isShow">Hello, fade!</div>
   </Transition>
-  <Transition name="slide">
+  <Transition name="slide" appear>
     <div v-if="isShow">Hello, slide!</div>
   </Transition>
 </template>
