@@ -7,7 +7,10 @@
   <h1>Animation</h1>
   <button @click="isShow = !isShow">Switch</button>
   <Transition name="fade">
-    <div v-if="isShow">Hello</div>
+    <div v-if="isShow">Hello, fade!</div>
+  </Transition>
+  <Transition name="slide">
+    <div v-if="isShow">Hello, slide!</div>
   </Transition>
 </template>
 <style scoped>
@@ -28,5 +31,19 @@
   }
   .fade-leave-to {
     opacity: 0;
+  }
+  .slide-enter-active {
+    animation: slide 1s;
+  }
+  .slide-leave-active {
+    animation: slide 1s reverse;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 </style>
