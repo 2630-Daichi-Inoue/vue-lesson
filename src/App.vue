@@ -25,11 +25,17 @@ const newFruit = ref('')
 .fade-enter-to {
   opacity: 1;
 }
+
+.fade-move {
+  transition: transform 1s;
+}
+
 .fade-leave-from {
   opacity: 1;
 }
 .fade-leave-active {
   transition: opacity 1s;
+  position: absolute;
 }
 .fade-leave-to {
   opacity: 0;
