@@ -6,6 +6,10 @@ import NotFound from '@/views/NotFound.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import PostsView from '@/views/PostsView.vue'
 import LikesView from '@/views/LikesView.vue'
+import NewsView from '@/views/NewsView.vue'
+import PeopleYouMayKnow from '@/views/PeopleYouMayKnow.vue'
+import HomeFooter from '@/views/HomeFooter.vue'
+import ProfileFooter from '@/views/ProfileFooter.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -13,12 +17,20 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      components: {
+        default: HomeView,
+        Sidebar: NewsView,
+        Footer: HomeFooter,
+      }
     },
     {
       path: '/:id',
       name: 'profile',
-      component: ProfileView,
+      components: {
+        default: ProfileView,
+        Sidebar: PeopleYouMayKnow,
+        Footer: ProfileFooter,
+      },
       children: [
         {
           path: 'posts',
