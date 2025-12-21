@@ -26,7 +26,8 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       name: 'notFound',
-      redirect: { name: 'home' }
+      props: true,
+      component: NotFound
     }
   ]
 })
