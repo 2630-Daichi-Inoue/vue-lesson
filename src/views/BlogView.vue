@@ -6,7 +6,6 @@
 
 <template>
   <h2>Blog(id: {{ $route.params.id }})</h2>
-  <h2>Ver.: {{ $route.params.version }}</h2>
   <RouterLink
     :to="{
     name: 'blog',
