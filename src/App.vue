@@ -4,8 +4,8 @@
 <template>
   <h1>Vue Router</h1>
 
-  <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/about">About</RouterLink>
+  <RouterLink :to="{ path: '/' }">Home</RouterLink>
+  <RouterLink :to="{ path: '/about', query: { lanmg: 'ja' }, hash: '#title' }">About</RouterLink>
   <RouterView />
 </template>
 
