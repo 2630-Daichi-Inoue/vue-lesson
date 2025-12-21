@@ -9,5 +9,5 @@
 
 <template>
   <h2>Not found!!!</h2>
-  <p>{{ catchAll }}</p>
+  <!-- <p>{{ catchAll }}</p> -->
 </template>
