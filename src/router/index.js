@@ -13,18 +13,20 @@ const router = createRouter({
     },
     {
       path: '/about',
+      alias: ['/me', '/yoshipi'],
       name: 'about',
       component: AboutView
     },
     {
-      path: '/blog/id*',
+      path: '/blog/:id',
+      alias: '/article/:id',
       name: 'blog',
       component: BlogView
     },
     {
       path: '/:catchAll(.*)*',
       name: 'notFound',
-      component: NotFound
+      redirect: { name: 'home' }
     }
   ]
 })
