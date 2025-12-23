@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Home</h2>
-    <!-- <RouterView /> -->
+    <p>{{ $route.meta }}</p>
   </div>
 
 </template>
