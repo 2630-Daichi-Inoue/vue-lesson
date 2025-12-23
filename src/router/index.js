@@ -23,4 +23,13 @@ const router = createRouter({
 router.beforeEach( () => {
   console.log('beforeEach')
 })
+
+router.beforeResolve(() => {
+  console.log('beforeResolve')
+})
+
+router.afterEach(() => {
+  console.log('afterEach')
+})
+
 export default router
