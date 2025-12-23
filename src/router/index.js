@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import BlogView from '@/views/BlogView.vue'
+// import HomeView from '@/views/HomeView.vue'
+const HomeView = () => import('@/views/HomeView.vue')
+// import BlogView from '@/views/BlogView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -14,7 +15,7 @@ const router = createRouter({
     {
       path: '/blog/:id',
       name: 'blog',
-      component: BlogView,
+      component: () => import('@/views/BlogView.vue'),
       meta: { requireAuth: true, transition: 'slide' },
       beforeEnter() {
         console.log('beforeEnter')
