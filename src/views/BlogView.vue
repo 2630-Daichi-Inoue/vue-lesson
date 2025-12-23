@@ -1,3 +1,10 @@
+<script setup>
+  import { onBeforeRouteUpdate } from 'vue-router';
+  onBeforeRouteUpdate(() => {
+    console.log('onBeforeRouteUpdate')
+  })
+</script>
+
 <template>
   <div>
     <h2 id="blog">Blog(id: {{ $route.params.id }})</h2>
