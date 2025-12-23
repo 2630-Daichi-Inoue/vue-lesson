@@ -13,13 +13,14 @@ const router = createRouter({
     {
       path: '/blog/:id',
       name: 'blog',
-      component: BlogView
+      component: BlogView,
+      beforeEnter() {
+        console.log('beforeEnter')
+      }
     },
   ]
 })
-router.beforeEach(async (to, from) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-  console.log(to, from)
+router.beforeEach( () => {
   console.log('beforeEach')
 })
 export default router
