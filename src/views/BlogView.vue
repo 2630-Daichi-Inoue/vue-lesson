@@ -1,7 +1,11 @@
 <script setup>
-  import { onBeforeRouteUpdate } from 'vue-router';
+  import { onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router';
   onBeforeRouteUpdate(() => {
     console.log('onBeforeRouteUpdate')
+  })
+  onBeforeRouteLeave(() => {
+    console.log('onBeforeRouteLeave')
+    return window.confirm('Are you sure you want to leave this page?')
   })
 </script>
 
