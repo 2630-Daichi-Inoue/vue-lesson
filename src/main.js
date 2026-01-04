@@ -5,8 +5,11 @@ import App from './App.vue'
 import BaseIcon from './components/BaseIcon.vue'
 import 'animate.css'
 import router from './router'
+import { createPinia } from 'pinia'
 
 const app = createApp(App)
+const pinia = createPinia()
+app.use(pinia)
 app.component('BaseIcon', BaseIcon)
 
 app.use(router)
