@@ -7,6 +7,8 @@ console.log(counterStore.count)
 <template>
   <h1>Pinia</h1>
   <button @click="counterStore.count++">Count Up</button>
+  <button @click="counterStore.increment">Increment</button>
   <p>{{ counterStore.count }}</p>
+  <p>{{ counterStore.doubleCount }}</p>
   <CounterComp />
 </template>
